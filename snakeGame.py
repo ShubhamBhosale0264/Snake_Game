@@ -13,7 +13,6 @@ pygame.init()
 white = (255, 255, 255)
 red = (255, 0, 0)
 black = (0, 0, 0)
-navy = (0, 166, 237)
 
 screen_width = 900
 screen_height = 600
@@ -38,9 +37,6 @@ def text_screen(text, color, x, y):
 def base_snake(gameWindow, color, snk_list, snake_size):
     for x,y in snk_list:
         pygame.draw.rect(gameWindow, color, [x, y, snake_size, snake_size])
-
-
-
 
 
 def welcome():
@@ -157,11 +153,11 @@ def gameloop():
 
             if head in snk_list[:-1]:
                 game_over = True
-                pygame.mixer.music.load('gameover.mp3')
-                pygame.mixer.music.play()
+            if snake_x<0 or snake_x>screen_width or snake_y<0 or snake_y>screen_height:
+                game_over = True
             base_snake(gameWindow, black, snk_list, snake_size)
            
-        
+    
         pygame.display.update()
         clock.tick(fps)
 
