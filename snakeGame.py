@@ -56,7 +56,6 @@ def welcome():
         clock.tick(60)
 
 
-
 def gameloop():
     exit_game = False
     game_over = False
@@ -136,6 +135,9 @@ def gameloop():
                 snk_length +=5
                 if score>int(hiscore):
                     hiscore = score
+            
+            
+            
 
             gameWindow.fill(white)
             gameWindow.blit(bgimg, (0, 0))
