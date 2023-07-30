@@ -126,7 +126,7 @@ def gameloop():
 
 
 
-            if abs(snake_x - food_x)<6 and abs(snake_y - food_y)<6:
+            if abs(snake_x - food_x)<20 and abs(snake_y - food_y)<20:
                 pygame.mixer.music.load('bite.mp3')
                 pygame.mixer.music.play()
                 score +=10
